@@ -1,0 +1,138 @@
+
+PROBLEM 1
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Contact {
+    long long phone;
+};
+
+struct Customer {
+    int accNo;
+    struct Contact contact;
+    struct Customer *next;
+};
+
+int main() {
+    struct Customer *cust1, *cust2;
+
+    cust1 = (struct Customer *)malloc(sizeof(struct Customer));
+    cust2 = (struct Customer *)malloc(sizeof(struct Customer));
+
+    cust1->accNo = 101;
+    cust1->contact.phone = 9876543210;
+    cust1->next = cust2;
+
+    cust2->accNo = 102;
+    cust2->contact.phone = 9123456789;
+    cust2->next = NULL;
+
+    struct Customer *temp = cust1;
+    while (temp != NULL) {
+        printf("%d - %lld -> ", temp->accNo, temp->contact.phone);
+        temp = temp->next;
+    }
+    printf("NULL");
+
+    return 0;
+}
+
+
+PROBLEM 2
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct Details {
+    char name[20];
+    char dept[10];
+};
+
+struct Student {
+    int roll;
+    struct Details info;
+    struct Student *next;
+};
+
+int main() {
+    struct Student *s1, *s2, *temp;
+
+    s1 = (struct Student *)malloc(sizeof(struct Student));
+    s2 = (struct Student *)malloc(sizeof(struct Student));
+
+    s1->roll = 1;
+    strcpy(s1->info.name, "Arun");
+    strcpy(s1->info.dept, "CSE");
+    s1->next = s2;
+
+    s2->roll = 2;
+    strcpy(s2->info.name, "Meena");
+    strcpy(s2->info.dept, "IT");
+    s2->next = NULL;
+
+    temp = s1;
+    while (temp != NULL) {
+        printf("%d %s %s -> ",
+               temp->roll,
+               temp->info.name,
+               temp->info.dept);
+        temp = temp->next;
+    }
+    printf("NULL");
+
+    return 0;
+}
+
+
+PROBLEM 3
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct Product {
+    char name[20];
+    int price;
+};
+
+struct Order {
+    int orderID;
+    struct Product product;
+    char status[15];
+    struct Order *next;
+};
+
+int main() {
+    struct Order *o1, *o2, *temp;
+
+    o1 = (struct Order *)malloc(sizeof(struct Order));
+    o2 = (struct Order *)malloc(sizeof(struct Order));
+
+    o1->orderID = 201;
+    strcpy(o1->product.name, "Mouse");
+    o1->product.price = 500;
+    strcpy(o1->status, "Delivered");
+    o1->next = o2;
+
+    o2->orderID = 202;
+    strcpy(o2->product.name, "Keyboard");
+    o2->product.price = 1500;
+    strcpy(o2->status, "Pending");
+    o2->next = NULL;
+
+    temp = o1;
+    while (temp != NULL) {
+        printf("%d %s %d %s -> ",
+               temp->orderID,
+               temp->product.name,
+               temp->product.price,
+               temp->status);
+        temp = temp->next;
+    }
+    printf("NULL");
+
+    return 0;
+}
