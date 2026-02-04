@@ -6,10 +6,9 @@ int main() {
     int search = 30;
     int position = -1;
 
-    // Linear search
     for (int i = 0; i < n; i++) {
         if (rolls[i] == search) {
-            position = i + 1; // Position starts from 1
+            position = i + 1; 
             break;
         }
     }
