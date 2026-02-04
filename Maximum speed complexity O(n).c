@@ -4,7 +4,7 @@ int main() {
     int speeds[] = {40, 55, 60, 45};
     int n = 4;
 
-    int maxSpeed = speeds[0];   // O(1) space
+    int maxSpeed = speeds[0];   
 
     for (int i = 1; i < n; i++) {
         if (speeds[i] > maxSpeed) {
