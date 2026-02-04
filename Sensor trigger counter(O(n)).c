@@ -1,13 +1,13 @@
 #include <stdio.h>
 
 int main() {
-    int triggerCount = 0;   // O(1) space
+    int triggerCount = 0;   
 
-    // Simulating sensor triggers
+    
     int sensorTriggers = 5;
 
     for (int i = 0; i < sensorTriggers; i++) {
-        triggerCount++;     // Increment on each trigger
+        triggerCount++;     
     }
 
     printf("Total triggers = %d\n", triggerCount);
