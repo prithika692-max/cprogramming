@@ -5,7 +5,6 @@ int main() {
     int n = 4;
     int duplicateFound = 0;
 
-    // Compare every roll number with others
     for (int i = 0; i < n; i++) {
         for (int j = i + 1; j < n; j++) {
             if (rolls[i] == rolls[j]) {

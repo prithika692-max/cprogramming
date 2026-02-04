@@ -6,7 +6,7 @@ int main() {
     int search = 11111;
     int found = 0;
 
-    // Linear search
+    
     for (int i = 0; i < n; i++) {
         if (contacts[i] == search) {
             found = 1;
