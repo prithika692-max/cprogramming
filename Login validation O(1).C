@@ -8,7 +8,6 @@ int main() {
     char inputUser[] = "admin";
     int inputPass = 1234;
 
-    // Single comparison
     if (strcmp(username, inputUser) == 0 && password == inputPass) {
         printf("Login successful\n");
     } else {
